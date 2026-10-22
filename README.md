@@ -1,7 +1,3 @@
-# VerdantIQ
-
-**An intelligent agricultural guardian rover for crop disease detection, smart pesticide application, animal intrusion prevention, precision irrigation, environmental monitoring, and predictive maintenance.**
-
 ## Project overview
 
 VerdantIQ is a planned multifunctional agricultural rover and farmer-interface system intended to help protect crops, monitor field conditions, reduce avoidable resource waste, and identify developing problems before they become serious losses. The design combines a mobile rover, distributed farm sensors, a farmer's handheld base unit, and dedicated embedded control using the Nordic **nRF54LM20 DK**.
