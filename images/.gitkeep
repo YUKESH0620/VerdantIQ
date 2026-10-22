@@ -1,0 +1,41 @@
+# Firmware Organization and Integration Notes
+
+This directory currently contains documentation only. The farmer's handheld base-unit firmware has been written, but its source is not included in this repository at this stage. No source files, upload status, test results, or exact base-unit architecture are fabricated here.
+
+## Intended firmware relationship
+
+### Farmer handheld base unit
+
+The base unit is the farmer-facing subsystem. Its intended responsibilities are to present rover status and sensor readings, display alerts and important field information, allow farmer commands, and support human oversight. Its exact components, existing software structure, and wireless protocol must be documented from the actual implementation before repository organization is prescribed for that subsystem.
+
+### ESP32 main controller
+
+The ESP32 is the initial high-level rover controller. Its planned firmware responsibilities include mission sequencing, subsystem coordination, command routing, interaction with the vision platform, and coordination with motor and irrigation drivers through appropriate interfaces.
+
+### Nordic nRF54LM20 DK embedded controller
+
+The Nordic firmware is planned as a dedicated embedded layer for sensor acquisition, measurement validation, Bluetooth communication with compatible distributed sensor nodes, equipment-health monitoring, local anomaly detection, safety checks, and communication with the ESP32. It is not assumed to carry demanding crop-disease vision workloads.
+
+## Proposed module areas for future repository code
+
+These are planning boundaries, not claims about existing source layout:
+
+- **Sensor acquisition and validation:** sampling, calibration handling, plausibility checks, timestamps, and stale-data detection.
+- **Bluetooth sensor-node communication:** node identity, provisioning, measurement exchange, retries, lost-link behavior, and security considerations.
+- **Equipment-health monitoring:** motor current, pump behavior, temperature, water flow, battery conditions, and operating-state correlation.
+- **Local anomaly detection:** thresholds and trends first; compact edge-AI evaluation only after hardware, SDK, memory, timing, and dataset feasibility are demonstrated.
+- **Safety checks and watchdogs:** communication timeouts, reset handling, sensor faults, actuator inhibit behavior, and safe default states.
+- **Motor and irrigation control interfaces:** command and feedback boundaries for external motor drivers, pumps, and valves.
+- **Nordic-to-ESP32 communication:** versioned UART or SPI candidate protocol, framing, sequence numbers, acknowledgements, health messages, and fault recovery.
+- **Event reporting and alerts:** structured abnormal-condition events, severity, recommended next step, acknowledgement, and forwarding to the farmer base unit.
+
+## Integration principles
+
+- Do not assume every sensor connects directly to the Nordic board; assign interfaces after pin, power, timing, and SDK review.
+- Keep demanding image processing on a suitable vision or main-computing platform.
+- Use external drivers for motors, pumps, and valves.
+- Define communication timeouts, watchdogs, manual override, emergency stop, and safe actuator states before field operation.
+- Record operating data before describing threshold alerts as predictive maintenance.
+- Verify peripheral support, memory, timing, and compatibility on the actual selected hardware.
+
+As implementation begins, add source code only when it is real, buildable, and accompanied by the configuration and test evidence needed to understand its status.
