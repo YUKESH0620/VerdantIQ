@@ -1,8 +1,8 @@
 # Preliminary Bill of Materials
 
-This is an **initial, editable engineering BOM** for VerdantIQ. It is a planning document, not evidence that every component has been selected, purchased, assembled, or tested. Revise it as the architecture, interfaces, safety requirements, and procurement plan are finalized.
+This is an **initial, editable engineering BOM** for VerdantIQ. It is a planning document, not evidence that every component has been selected, purchased, assembled, or tested. 
 
-Add exact part numbers, quantities, suppliers, prices, and procurement status when known. Use `TBD` where a decision remains open.
+`TBD`used where a decision remains open.
 
 | Item | Component | Purpose | Quantity | Status | Specifications or notes |
 |---:|---|---|---:|---|---|
