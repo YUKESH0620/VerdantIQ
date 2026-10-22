@@ -19,24 +19,24 @@ The seven planned capabilities remain part of one system: crop disease detection
 
 ```mermaid
 flowchart LR
-    Farmer[Farmer] --> Base[Handheld base unit\nFirmware written; hardware integration in progress]
-    Base <-->|Status, alerts, commands\nprotocol TBD| ESP32[ESP32\nInitial main brain]
-    ESP32 <-->|Candidate UART or SPI\nsubject to validation| Nordic[nRF54LM20 DK\nDedicated embedded controller]
-    Nordic <-->|Bluetooth\ncompatible sensor nodes| Nodes[Distributed farm sensor nodes]
-    Nodes --> Field[Soil and environmental data]
-    Nordic --> Validate[Measurement validation\nsensor fusion where appropriate]
-    Nordic --> Health[Equipment-health monitoring\nanomaly detection and safety checks]
-    ESP32 --> Vision[Vision platform]
-    Vision --> Imaging[Crop and field imaging\ndisease-detection processing]
-    ESP32 --> MotorDriver[Motor drivers]
-    MotorDriver --> Drive[Rover motors and wheels]
-    ESP32 --> FluidDriver[Pump and valve drivers]
-    FluidDriver --> Irrigation[Precision irrigation]
-    ESP32 --> Pesticide[Controlled pesticide delivery]
-    ESP32 --> Patrol[Night-patrol sensing]
-    Health --> Alerts[Alerts and recommendations]
+    Farmer["Farmer"] --> Base["Handheld base unit<br/>Firmware written; hardware integration in progress"]
+    Base <-->|Status, alerts, commands<br/>protocol TBD| ESP32["ESP32<br/>Initial main brain"]
+    ESP32 <-->|Candidate UART or SPI<br/>subject to validation| Nordic["nRF54LM20 DK<br/>Dedicated embedded controller"]
+    Nordic <-->|Bluetooth<br/>compatible sensor nodes| Nodes["Distributed farm sensor nodes"]
+    Nodes --> Field["Soil and environmental data"]
+    Nordic --> Validate["Measurement validation<br/>sensor fusion where appropriate"]
+    Nordic --> Health["Equipment-health monitoring<br/>anomaly detection and safety checks"]
+    ESP32 --> Vision["Vision platform"]
+    Vision --> Imaging["Crop and field imaging<br/>disease-detection processing"]
+    ESP32 --> MotorDriver["Motor drivers"]
+    MotorDriver --> Drive["Rover motors and wheels"]
+    ESP32 --> FluidDriver["Pump and valve drivers"]
+    FluidDriver --> Irrigation["Precision irrigation"]
+    ESP32 --> Pesticide["Controlled pesticide delivery"]
+    ESP32 --> Patrol["Night-patrol sensing"]
+    Health --> Alerts["Alerts and recommendations"]
     Alerts --> Base
-    Future[Raspberry Pi future evaluation] -. possible future main brain .-> Nordic
+    Future["Raspberry Pi future evaluation"] -. possible future main brain .-> Nordic
 ```
 
 The diagram is intentionally a proposal. Interfaces, pin assignments, protocols, sensor placement, and final computing allocation require validation.

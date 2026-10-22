@@ -44,19 +44,19 @@ See [current status](docs/current_status.md) for a concise, updateable record.
 
 ```mermaid
 flowchart LR
-    Farmer[Farmer] --> Base[Handheld base unit\nFirmware written; hardware integration in progress]
-    Base <-->|Farmer-facing status, alerts, commands| ESP32[ESP32\nInitial main brain]
-    ESP32 <-->|Candidate UART or SPI\nsubject to validation| Nordic[nRF54LM20 DK\nDedicated embedded controller]
-    Nordic <-->|Bluetooth\ncompatible sensor nodes| Nodes[Distributed farm sensor nodes]
-    Nordic --> Health[Local equipment-health\nmonitoring and safety checks]
-    ESP32 --> Vision[ESP32-CAM or suitable\nvision platform]
-    Vision --> Crop[Crop and field imaging]
-    ESP32 --> Drivers[Motor and pump/valve drivers]
-    Drivers --> Motion[Rover motors and wheels]
-    Drivers --> Water[Irrigation pump and valves]
-    ESP32 --> Pesticide[Controlled pesticide-delivery\nmechanism]
-    ESP32 --> Patrol[Night-patrol sensing hardware]
-    Nordic --> Env[Validated sensor data\nand embedded control functions]
+    Farmer["Farmer"] --> Base["Handheld base unit<br/>Firmware written; hardware integration in progress"]
+    Base <-->|Farmer-facing status, alerts, commands| ESP32["ESP32<br/>Initial main brain"]
+    ESP32 <-->|Candidate UART or SPI<br/>subject to validation| Nordic["nRF54LM20 DK<br/>Dedicated embedded controller"]
+    Nordic <-->|Bluetooth<br/>compatible sensor nodes| Nodes["Distributed farm sensor nodes"]
+    Nordic --> Health["Local equipment-health<br/>monitoring and safety checks"]
+    ESP32 --> Vision["ESP32-CAM or suitable<br/>vision platform"]
+    Vision --> Crop["Crop and field imaging"]
+    ESP32 --> Drivers["Motor and pump/valve drivers"]
+    Drivers --> Motion["Rover motors and wheels"]
+    Drivers --> Water["Irrigation pump and valves"]
+    ESP32 --> Pesticide["Controlled pesticide-delivery<br/>mechanism"]
+    ESP32 --> Patrol["Night-patrol sensing hardware"]
+    Nordic --> Env["Validated sensor data<br/>and embedded control functions"]
 ```
 
 This is a **planned architecture**, not a representation of completed integration.
