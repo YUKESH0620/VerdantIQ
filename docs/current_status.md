@@ -14,7 +14,7 @@ This document is intentionally concise so it can be updated as evidence becomes 
 
 ## Planned work
 
-- Finalize the hardware architecture and BOM.
+- Finalise the hardware architecture and BOM.
 - Set up and validate the Nordic development environment.
 - Implement sensor acquisition and measurement validation.
 - Establish Bluetooth communication with compatible distributed sensor nodes.
@@ -31,13 +31,12 @@ This document is intentionally concise so it can be updated as evidence becomes 
 - Rover operation, field validation, model accuracy, animal-detection performance, water savings, pesticide reduction, and failure prediction are not claimed as demonstrated.
 - No component is marked purchased or assembled in the preliminary BOM without evidence.
 
-## Update guidance
+## Future Update
 
-When progress is made, update this document with:
+When progress is made, this document will be updated with:
 
 - Date and short change description.
 - Hardware or firmware revision involved.
 - Test setup and measured result.
 - Known limitations, failures, and next action.
 
-Keep claims tied to evidence. Use terms such as `planned`, `under evaluation`, `in progress`, `validated`, and `measured` consistently.
